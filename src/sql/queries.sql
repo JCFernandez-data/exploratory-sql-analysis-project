@@ -22,31 +22,31 @@ SELECT * FROM observations;
 
 
 -- MISSION 1
--- Your query here;
+-- SELEC * FROM opservation LIMIT 10;
 
 -- MISSION 2
--- Your query here;
+-- SELECT DISTINCS region_id FROM opservation; 
 
 
 -- MISSION 3
--- Your query here;
+-- SELECT COUNT(DISTINCT especies_id) FROM opservation;
 
 
 -- MISSION 4
--- Your query here;
+-- SELECT COUNT(*) FROM opservation WHERE region_id = 2;
 
 
 -- MISSION 5
--- Your query here;
+-- SELEC COUNT(*)FROM opservation WHERE opservacion_date = '1998-08-08';
 
 
 -- MISSION 6
--- Your query here;
+-- SELECT region_id COUNT(*) FROM opservations GROUP BY region_id ORDEN BY COUNT(*) DESC LIMIT 1;
 
 
 -- MISSION 7
--- Your query here;
+-- SELECT especies_id COUNT(*) FROM opservations GRUPO BY especies_id COUNT(*) DESC LIMIT 1;
 
 
 -- MISSION 8
--- Your query here;
+-- SELECT region_id COUNT(*) FROM opservations GROUP BY region_id HAVING COUNT(*) > 100;
