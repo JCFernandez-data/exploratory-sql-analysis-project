@@ -47,6 +47,6 @@ SELECT * FROM observations;
 -- MISSION 7
 -- SELECT especies_id COUNT(*) FROM opservations GRUPO BY especies_id COUNT(*) DESC LIMIT 1;
 
-
+-- He usado GROUP BY para organizar los datos por categorías y HAVING para filtrar los resultados que daban los conteos, fue lo que mas me costo 
 -- MISSION 8
 -- SELECT region_id COUNT(*) FROM opservations GROUP BY region_id HAVING COUNT(*) > 100;
