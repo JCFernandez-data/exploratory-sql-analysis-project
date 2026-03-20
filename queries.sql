@@ -77,8 +77,10 @@ VALUES (1, 1, '2026-03-07', 'Juan');
 -- mision 14 corregir y borrar datos 
 UPDATE species
 SET scientific_name = 'Panthera onca'
-WHERE scientific_name = 'Panthera oncca';
+WHERE id = 1;
 
 --mision 15 borrar registros de pruebas 
+Borrar la observación que tú creaste (la de Juan)
 DELETE FROM observations
-WHERE id = 999; 
+WHERE observer = 'Juan';
+
