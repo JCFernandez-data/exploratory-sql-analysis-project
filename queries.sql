@@ -29,7 +29,7 @@ SELECT * FROM observations;
 
 
 -- MISSION 3
- SELECT COUNT(DISTINCT especies_id) FROM observations;
+ SELECT COUNT(DISTINCT species_id) FROM observations;
 
 
 -- MISSION 4
@@ -37,22 +37,22 @@ SELECT * FROM observations;
 
 
 -- MISSION 5
- SELECT COUNT(*)FROM observations WHERE date = '1998-08-08';
+ SELECT COUNT(*) FROM observations WHERE date = '1998-08-08';
 
 
 -- MISSION 6
- SELECT region_id COUNT(*) FROM observations GROUP BY region_id ORDEN BY COUNT(*) DESC LIMIT 1;
+ SELECT region_id, COUNT(*) FROM observations GROUP BY region_id ORDER BY COUNT(*) DESC LIMIT 1;
 
 
 -- MISSION 7
- SELECT especies_id COUNT(*) FROM observations GRUPO BY especies_id COUNT(*) DESC LIMIT 1;
+ SELECT species_id, COUNT(*) FROM observations GROUP BY species_id ORDER BY COUNT(*) DESC LIMIT 1;
 
 -- He usado GROUP BY para organizar los datos por categorías y HAVING para filtrar los resultados que daban los conteos, fue lo que mas me costo 
 -- MISSION 8
- SELECT region_id COUNT(*) FROM observations GROUP BY region_id HAVING COUNT(*) > 5;
+ SELECT region_id, COUNT(*) FROM observations GROUP BY region_id HAVING COUNT(*) > 5;
 
 -- MISION 9 registros por cada informasion 
-SELECT observer, COUNT() FROM opservations GROUP BY observer ORDER BY COUNT() DESC;
+SELECT observer, COUNT(*) FROM observations GROUP BY observer ORDER BY COUNT(*) DESC;
 
 -- mision 10 unir tablas de observaciones uso JOIN para vincular el nombre de la region 
 SELECT observations.*, regions.name
@@ -65,19 +65,20 @@ FROM observations
 JOIN species ON observations.species_id = species.id;
 
 --mision 12 se agrupa para ver conteos 
-SELECT region_id, species_id, COUNT()
+SELECT region_id, species_id, COUNT(*)
 FROM observations
 GROUP BY region_id, species_id
-ORDER BY COUNT() DESC;
+ORDER BY COUNT(*) DESC;
 
 -- mision 13 insertar datos de pruebas 
 INSERT INTO observations (region_id, species_id, date, observer)
 VALUES (1, 1, '2026-03-07', 'Juan');
 
 -- mision 14 corregir y borrar datos 
-UPDATE species SET scientific_name = 'Panthera leo' WHERE id = 1;
-DELETE FROM observations WHERE id = 1;
+UPDATE species
+SET scientific_name = 'Panthera onca'
+WHERE scientific_name = 'Panthera oncca';
 
 --mision 15 borrar registros de pruebas 
-DELETE FROM observations WHERE id = 1;
-
+DELETE FROM observations
+WHERE id = 999; 
